@@ -1,14 +1,17 @@
+// TypeScript/JavaScript
 window.addEventListener("load", function () {
 	document.querySelector(".preloader").classList.add("opacity-0");
 	setTimeout(function () {
 		document.querySelector(".preloader").style.display = "none";
 	}, 2000)
 })
+
 const navbar = document.querySelector(".navbar")
 const navList = navbar.querySelectorAll("li")
 const totalNavList = navList.length
 const allSection = document.querySelectorAll(".section")
 const totalSectionLength = allSection.length;
+
 for (let i = 0; i < totalNavList; i++) {
 	const a = navList[i].querySelector("a");
 	a.addEventListener("click", function () {
@@ -54,18 +57,22 @@ function updateNav(element) {
 		}
 	}
 }
-document.querySelector(".hire-me").addEventListener("click", function () {
-	const sectionIndex = this.getAttribute("data-section-index");
-	showSection(this);
-	updateNav(this);
-	removeBackSectionClass();
-	addBackSectionClass(sectionIndex);
-})
-const navTogglerBtn = document.querySelector(".nav-toggler")
+
+// document.querySelector(".hire-me").addEventListener("click", function () {
+// 	const sectionIndex = this.getAttribute("data-section-index");
+// 	showSection(this);
+// 	updateNav(this);
+// 	removeBackSectionClass();
+// 	addBackSectionClass(sectionIndex);
+// })
+
+const navTogglerBtn = document.querySelector(".nav-toggler");
 const aside = document.querySelector(".aside");
-navTogglerBtn.addEventListener("click", asideSectionTogglerBtn)
+navTogglerBtn.addEventListener("click", asideSectionTogglerBtn);
+
 
 function asideSectionTogglerBtn() {
+	console.log("button click")
 	aside.classList.toggle("open");
 	navTogglerBtn.classList.toggle("open");
 	for (let i = 0; i < totalSectionLength; i++) {
